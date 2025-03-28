@@ -1,0 +1,154 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-bg: oklch(0.373 0.034 259.733);
+  --secondary-text: rgb(160, 147, 147);
+  --blockquote-color: rgba(107, 96, 96, 0.719);
+  --border-color: #e5e7eb;
+  --text-dark: #4b5057;
+}
+
+/* Typography */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  padding: 1em;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  margin-top: 1em;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  color: var(--secondary-text);
+}
+
+/* Layout */
+.wrapper {
+  display: flex;
+  gap: 2em;
+  padding: 2em;
+}
+
+.wrapper > * {
+  flex: 1;
+}
+
+.section-editor,
+.section-preview {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+}
+
+/* Headers */
+.editor-header,
+.preview-header {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-bg);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.5em;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.editor-header {
+  justify-content: space-between;
+}
+
+.editor-header-title {
+  display: flex;
+  align-items: center;
+}
+
+.section-header-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5em;
+}
+
+/* Editor & Preview */
+.editor,
+.preview {
+  width: 100%;
+  height: calc(100vh - 12rem);
+  border: none;
+  font-size: 1rem;
+  padding: 0.8em;
+}
+
+.editor {
+  resize: none;
+}
+
+.editor:focus {
+  outline: none;
+}
+
+.preview {
+  overflow-y: auto;
+}
+
+/* Clear Editor Button */
+.clear-editor {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.clear-editor-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Code Styling */
+code {
+  color: #fff;
+  background-color: #111;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+[class^="language-"] {
+  display: block;
+  border-radius: 5px;
+  padding: 1em;
+  background-color: #1e1e1e;
+  color: #ddd;
+  overflow-x: auto;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--border-color);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--text-dark);
+  font-style: italic;
+  font-weight: bold;
+}
+
+blockquote p::before,
+blockquote p::after {
+  content: '"';
+  color: var(--blockquote-color);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 1.5em;
+  }
+}

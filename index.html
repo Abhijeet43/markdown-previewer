@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <script type="module" src="/src/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="header-title">Markdown Previewer</h1>
+      <p class="header-subtitle">
+        Write Markdown on the left, see the preview on the right
+      </p>
+    </header>
+    <main>
+      <div class="wrapper">
+        <div class="section-editor">
+          <div class="editor-header">
+            <div class="editor-header-title">
+              <svg
+                class="section-header-icon"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="#ffffff"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g fill="#000000">
+                    <path
+                      d="M4.75 8a.75.75 0 000 1.5h5.5a.75.75 0 000-1.5h-5.5zM4 11.75a.75.75 0 01.75-.75h3.5a.75.75 0 010 1.5h-3.5a.75.75 0 01-.75-.75zM4.75 5a.75.75 0 000 1.5h1.5a.75.75 0 000-1.5h-1.5z"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 2.25A2.25 2.25 0 013.25 0h6.293c.331 0 .65.132.884.366l4.207 4.207c.234.235.366.553.366.884v8.293A2.25 2.25 0 0112.75 16h-9.5A2.25 2.25 0 011 13.75V2.25zm2.25-.75a.75.75 0 00-.75.75v11.5c0 .414.336.75.75.75h9.5a.75.75 0 00.75-.75V6H9.75A.75.75 0 019 5.25V1.5H3.25zm7.25 1.06l1.94 1.94H10.5V2.56z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+              <span>Editor</span>
+            </div>
+            <button id="clear-editor" class="clear-editor" title="Clear editor">
+              <svg
+                class="clear-editor-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#ffffff"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M18 6L17.1991 18.0129C17.129 19.065 17.0939 19.5911 16.8667 19.99C16.6666 20.3412 16.3648 20.6235 16.0011 20.7998C15.588 21 15.0607 21 14.0062 21H9.99377C8.93927 21 8.41202 21 7.99889 20.7998C7.63517 20.6235 7.33339 20.3412 7.13332 19.99C6.90607 19.5911 6.871 19.065 6.80086 18.0129L6 6M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6M14 10V17M10 10V17"
+                    stroke="#ffffff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+          <textarea
+            class="editor"
+            id="editor-body"
+            class=""
+            placeholder="Enter your markdown here..."
+          ></textarea>
+        </div>
+        <div class="section-preview">
+          <div class="preview-header">
+            <svg
+              class="section-header-icon"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="#ffffff"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g fill="#000000">
+                  <path
+                    d="M4.75 8a.75.75 0 000 1.5h5.5a.75.75 0 000-1.5h-5.5zM4 11.75a.75.75 0 01.75-.75h3.5a.75.75 0 010 1.5h-3.5a.75.75 0 01-.75-.75zM4.75 5a.75.75 0 000 1.5h1.5a.75.75 0 000-1.5h-1.5z"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 2.25A2.25 2.25 0 013.25 0h6.293c.331 0 .65.132.884.366l4.207 4.207c.234.235.366.553.366.884v8.293A2.25 2.25 0 0112.75 16h-9.5A2.25 2.25 0 011 13.75V2.25zm2.25-.75a.75.75 0 00-.75.75v11.5c0 .414.336.75.75.75h9.5a.75.75 0 00.75-.75V6H9.75A.75.75 0 019 5.25V1.5H3.25zm7.25 1.06l1.94 1.94H10.5V2.56z"
+                    clip-rule="evenodd"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <span>Preview</span>
+          </div>
+          <div class="preview" id="preview-body" class=""></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
